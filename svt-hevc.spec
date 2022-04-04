@@ -10,7 +10,6 @@ Source0:	https://github.com/OpenVisualCloud/SVT-HEVC/archive/v%{version}/SVT-HEV
 # Source0-md5:	cc41d3975610781f70527faa567c6a30
 URL:		https://github.com/OpenVisualCloud/SVT-HEVC
 BuildRequires:	cmake >= 3.5
-BuildRequires:	libstdc++-devel >= 6:5.4
 BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	yasm >= 1.2.0
 Requires:	cpuinfo(sse2)
@@ -67,8 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE.md NOTICES.md README.md 
 %attr(755,root,root) %{_bindir}/SvtHevcEncApp
-%attr(755,root,root) %{_libdir}/libSvtHevcEnc.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libSvtHevcEnc.so.1
+%attr(755,root,root) %{_libdir}/libSvtHevcEnc.so.1
 
 %files devel
 %defattr(644,root,root,755)
