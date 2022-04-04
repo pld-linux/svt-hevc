@@ -46,7 +46,10 @@ Pliki nagłówkowe biblioteki SVT-HEVC.
 %build
 install -d build
 cd build
-%cmake ..
+%cmake .. \
+%ifarch x32
+	-DCMAKE_ASM_NASM_OBJECT_FORMAT=elfx32
+%endif
 
 %{__make}
 
